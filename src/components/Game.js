@@ -60,10 +60,14 @@ class Game extends React.Component {
 
     let status;
 
-    if (winner) {
-      status = "Win " + winner;
+    if (winner === "It's a draw!") {
+      status = winner;
     } else {
-      status = "Next step: " + (this.state.xIsNext ? "🧚‍♀️" : "👻");
+      if (winner) {
+        status = "Win " + winner;
+      } else {
+        status = "Next step: " + (this.state.xIsNext ? "🧚‍♀️" : "👻");
+      }
     }
 
     return (

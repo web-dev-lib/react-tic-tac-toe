@@ -1,4 +1,15 @@
 export function calculateWinner(squares) {
+  let nullCount = 0;
+  squares.forEach(elem => {
+    if (elem === null) {
+      ++nullCount;
+    }
+  });
+
+  if (nullCount === 0) {
+    return `It's a draw!`;
+  }
+
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
